@@ -17,7 +17,7 @@ class Question extends Component {
 
     setQuestion() {
         const queAndAnswer = generateQuestionAndAnswer();
-        const options = this.getOptions(queAndAnswer.answer);
+        const options = this.generateOptions(queAndAnswer.answer);
         const shuffledOptions = this.getShuffledArray(options);
 
         return {
@@ -26,7 +26,7 @@ class Question extends Component {
         }
     }
 
-    getOptions(answer) {
+    generateOptions(answer) {
         let deviations = [-2, -1, -0.5, 0.5, 1, 2];
         const options = [answer];
         for(let i = 0; i < 3; i++) {
