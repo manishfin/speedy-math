@@ -70,26 +70,32 @@ class Main extends Component {
     }
 
     render() {
-        console.log('####render');
+        const {
+            isGameOver,
+            totalScore,
+            totalTime,
+            countdown,
+        } = this.state;
+
         return (
             <div>
                 {
-                    this.state.isGameOver ?
+                    isGameOver ?
                     (
-                        <Model visible={this.state.isGameOver} totalScore={this.state.totalScore} totalTime={this.state.totalTime} callBack={this.resetState} />
+                        <Model visible={isGameOver} totalScore={totalScore} totalTime={totalTime} callBack={this.resetState} />
                     ) :
                     (
                         <Layout className="layout">
                             <Header className="header">
                                 <div>
                                     <span className="info-text">Score: </span>
-                                    <Button type="primary" shape="circle">{this.state.totalScore}</Button>
+                                    <Button type="primary" shape="circle">{totalScore}</Button>
                                     <Divider type="vertical" />
                                     <span className="info-text">Total Time: </span>
-                                    <Button type="primary" shape="circle">{this.state.totalTime}</Button>
+                                    <Button type="primary" shape="circle">{totalTime}</Button>
                                     <Divider type="vertical" />
                                     <span className="info-text">Timer: </span>
-                                    <Button type="primary" shape="circle" danger>{this.state.countdown}</Button>
+                                    <Button type="primary" shape="circle" danger>{countdown}</Button>
                                 </div>
                             </Header>
                             <Content className="content">
