@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Layout, Divider } from 'antd';
 
-import Model from '../components/Model';
+import Modal from '../components/Modal';
 import Question from '../components/Question';
 
 import '../assets/styles/Main.css';
@@ -82,7 +82,7 @@ class Main extends Component {
                 {
                     isGameOver ?
                     (
-                        <Model visible={isGameOver} totalScore={totalScore} totalTime={totalTime} callBack={this.resetState} />
+                        <Modal visible={isGameOver} totalScore={totalScore} totalTime={totalTime} callBack={this.resetState} />
                     ) :
                     (
                         <Layout className="layout">
