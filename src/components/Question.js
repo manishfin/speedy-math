@@ -74,7 +74,6 @@ class Question extends Component {
                             );
                         })
                     }
-                    {answer}
                 </div>
             </Card>
         );
