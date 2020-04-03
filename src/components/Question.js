@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Button, Card } from 'antd';
 
-import { generateQuestionAndAnswer, getRandomValue, round } from '../utils/utils';
+import { generateQuestionAndAnswer, getRandomValue, round, generateRandomNumber } from '../utils/utils';
 
 class Question extends Component {
     constructor(props) {
@@ -11,7 +11,7 @@ class Question extends Component {
 
     getInitialState() {
         return {
-            question: this.setQuestion(),
+            questionSet: this.setQuestion(),
         }
     }
 
@@ -42,7 +42,7 @@ class Question extends Component {
 
     getShuffledArray(values) {
         for (let i = 0; i < values.length; i++) {
-            const rand = Math.floor(Math.random() * (i + 1));
+            const rand = generateRandomNumber(0, i+1);
             [values[i], values[rand]] = [values[rand], values[i]]
         }
 
@@ -55,7 +55,7 @@ class Question extends Component {
     }
 
     render() {
-        const { question, answer, shuffledOptions } = this.state.question;
+        const { question, answer, shuffledOptions } = this.state.questionSet;
 
         return (
             <Card style={{marginTop: '50px'}}>
