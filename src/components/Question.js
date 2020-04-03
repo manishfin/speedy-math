@@ -66,7 +66,7 @@ class Question extends Component {
                     {
                         shuffledOptions.map((value, index) => {
                             return (
-                                <div key={index}>
+                                <div key={`${value}_${index}`}>
                                     <Button className="btn" key={index} onClick={() => this.handleClick(value, answer)}>
                                         <Card.Grid className="card-container">{value}</Card.Grid>
                                     </Button>
