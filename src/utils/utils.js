@@ -1,7 +1,7 @@
 
 const operators = ['+', '-', '*', '/'];
 
-const generateRandomNumber = (min=1, max=100) => Math.floor(Math.random() * (max - min) + min);
+export const generateRandomNumber = (min=1, max=100) => Math.floor(Math.random() * (max - min) + min);
 
 export const round = (value, place=0) => Math.round(value * Math.pow(10, place)) / Math.pow(10, place);
 
@@ -24,4 +24,3 @@ export const generateQuestionAndAnswer = () => {
         answer,
     };
 };
-
